@@ -2,14 +2,15 @@ const express = require('express')
 const morgan = require("morgan");
 const cors = require("cors");
 const dotenv = require('dotenv');
+const todoRouter=require("./routers/routes/todos");
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(dotenv());
+app.use(todoRouter);
 
-
-
+/*
 let todos=[{id:1,
     name:"sleep",
     isDelete:false,
@@ -26,7 +27,7 @@ let todos=[{id:1,
             isCompleted:false
             }];
     
-    app.get("/todos"),(req,res)=>
+    app.get("/todos",(req,res)=>
     {
     
         res.stutus(200).json(todos);
@@ -115,11 +116,12 @@ ele.isDelete=true;
 res.status(200).json(todos);
 
 })
-})
+})*/
 
-        const PORT = 4000
+const PORT = process.env.PORT ||4000;
 
-        app.listen(PORT, ()=>{
-            console.log(`server running at port ${PORT}`)
+app.listen(PORT, ()=>{
+    console.log(`server running at port ${PORT}`)
+
         })
     
