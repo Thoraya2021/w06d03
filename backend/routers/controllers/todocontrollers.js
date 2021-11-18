@@ -19,7 +19,7 @@ const gettodo=(req,res) => {
     
     const{id}=req.params;
     try {
-    const found= todos.find((item)=>{
+    const found= todos.find((item)=> {
     return item.id ==id;
     
     });
@@ -47,20 +47,15 @@ const gettodo=(req,res) => {
    
    }
    }
-   const updatetodo=(req,res)=>
-   {
+   const updatetodo=(req,res)=>{
    const {id}=req.params;
    todos.forEach ((ele)=>{
    if(ele.id==id){
-   
-   ele.isCompleted=true;
-   
-   }
+   ele.isCompleted=true;}
    
    res.status(200).json(todos)
    });
-
-
+   }
    const deletetodo =(req,res)=>
    {
    const {id}=req.params;

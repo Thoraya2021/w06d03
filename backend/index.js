@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const dotenv = require('dotenv');
 const todoRouter=require("./routers/routes/todos");
-const  todoModel =require("./DB/modules/index")
+const  todoModel =require("./DB/modules/todo")
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
