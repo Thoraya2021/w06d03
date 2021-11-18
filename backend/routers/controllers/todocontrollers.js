@@ -69,11 +69,11 @@ const gettodo=(req,res) => {
    
    ele.isDelete=true;
    
-   };
+   }
 
    res.status(200).json(todos);
    
-   })
+   });
    }
 
    module.exports = {
