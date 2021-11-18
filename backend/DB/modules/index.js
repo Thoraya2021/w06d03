@@ -1,13 +1,15 @@
 
 
 const mongoose=require("mongoose")
-const { boolean } = require("webidl-conversions")
-const todoschema=new mongoose.Schema({
-name:{type:String,required:true},
-isDelete:{type:boolean,default:false},
-isCompele:{type :boolean,default:false}
+const dotenv = require('dotenv')
 
-});
+dotenv.config();
 
-const todoModel =mongoose.model("Todo",todoschema);
-module.exports=todoModel;
+const options ={
+
+};
+mongoose.connect(`mongodb://localhost:27017/${process.env.DB}`,options)
+.then(()=>{
+console.log("DB connected");
+})
+
